@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>UnBeAlIvAbLe MoNeY cOuNtInG</title>
+	<meta charset="UTF=8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.6.3.js"
+		integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous">
+		</script>
+</head>
+
+<body>
+	<div class="window" id="window">
+		<div class="inputs" id="inputs">
+			<label for="month">Date</label>
+			<input type="date" id="month" name="month" min="2024-01-01"
+				onkeypress="return /[0-9, -]/i.test(event.key)" />
+			<div class="expenses" id="expenses">
+				<input type="text" id="name" name="name" required minlength="2" placeholder="name" />
+				<input type="number" id="price" name="price" required minlength="1" placeholder="price"
+					onkeypress="return /[0-9]/i.test(event.key)" />
+				<input type="text" id="comment" name="comment" required maxlength="20"
+					placeholder="comment if u need" />
+			</div>
+		</div>
+		<div class="space" id="space">
+			<div class="inputArea" id="area">
+				<div class="item" id="item">omg i need smth</div>
+			</div>
+			<div class="buttons" id="buttons">
+				<button class="seeAll" id="seeAll" onclick="seeAll()">See all</button>
+				<button class="find" id="find" onclick="find()">Find</button>
+				<form class="form" id="form">
+					<select class="findBy" id="findBy" name="select" size="1" onchange="findChange()">
+						<option selected>Select</option>
+						<option class="findName" value="Name">Find by name</option>
+						<option class="findDate" value="Date">Find by date</option>
+						<option class="findPrice" value="Price">Find by price</option>
+					</select>
+				</form>
+				<button class="add" id="add" onclick="addArea()">Add new one</button>
+				<button class="delete" id="delete" onclick="Delete()">Delete</button>
+			</div>
+		</div>
+	</div>
+	<div class="ownAlert" id="ownAlert">
+		<div class="textAlert" id="textAlert"></div>
+		<div class="closeAlert" id="closeAlert" onclick="closeAlert()">Close</div>
+	</div>
+	<div id="PromisePrompt" class="modal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title"><i class="fas fa-question-circle text-primary"></i> <span
+							id="promptSpan"></span></h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span class="none" aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="PromisePromptInput"></label>
+						<input type="text" class="form-control" id="PromisePromptInput">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
